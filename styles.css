@@ -350,6 +350,58 @@ a:hover {
   box-shadow: var(--shadow);
 }
 
+@media (prefers-color-scheme: dark) {
+  .mermaid svg {
+    background: transparent;
+  }
+
+  .mermaid svg .node rect,
+  .mermaid svg .node circle,
+  .mermaid svg .node ellipse,
+  .mermaid svg .node polygon,
+  .mermaid svg .node path {
+    fill: #1d1d1f !important;
+    stroke: #6e6e73 !important;
+  }
+
+  .mermaid svg .label,
+  .mermaid svg .nodeLabel,
+  .mermaid svg .edgeLabel,
+  .mermaid svg .cluster-label,
+  .mermaid svg .messageText,
+  .mermaid svg .actor,
+  .mermaid svg text {
+    color: #f5f5f7 !important;
+    fill: #f5f5f7 !important;
+  }
+
+  .mermaid svg foreignObject,
+  .mermaid svg foreignObject div,
+  .mermaid svg .label div,
+  .mermaid svg .nodeLabel div {
+    color: #f5f5f7 !important;
+  }
+
+  .mermaid svg .edgeLabel,
+  .mermaid svg .edgeLabel rect,
+  .mermaid svg .labelBkg {
+    background-color: #161617 !important;
+    fill: #161617 !important;
+  }
+
+  .mermaid svg .flowchart-link,
+  .mermaid svg .messageLine0,
+  .mermaid svg .messageLine1,
+  .mermaid svg .relationshipLine {
+    stroke: #a1a1a6 !important;
+  }
+
+  .mermaid svg marker path {
+    fill: #a1a1a6 !important;
+    stroke: #a1a1a6 !important;
+  }
+}
+
 .rail-panel {
   padding: 16px;
   border: 1px solid var(--line-soft);
