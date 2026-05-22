@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>High Level Design: The Practical Guide to Thinking in Systems</title>
+    <meta
+      name="description"
+      content="A visual, fundamentals-first guide to High Level Design with practical examples, diagrams, trade-offs, and AI-era architecture patterns."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="High Level Design guide home">
+        <span class="brand-mark">HLD</span>
+        <span class="brand-text">High Level Design</span>
+      </a>
+      <nav class="topnav" aria-label="Primary navigation">
+        <a href="#15-example-1-design-a-url-shortener">Examples</a>
+        <a href="#24-hld-in-the-age-of-ai">AI Era</a>
+        <a href="high-level-design-blog.md">Markdown</a>
+      </nav>
+    </header>
+
+    <main class="shell" id="top">
+      <aside class="sidebar" aria-label="Table of contents">
+        <div class="sidebar-title">Contents</div>
+        <nav id="toc" class="toc"></nav>
+      </aside>
+
+      <article class="article">
+        <div class="article-kicker">Architecture Fundamentals</div>
+        <div id="content" class="content" aria-live="polite">
+          <div class="loading">Loading guide...</div>
+        </div>
+      </article>
+
+      <aside class="rail" aria-label="Reading guide">
+        <div class="rail-panel">
+          <span class="rail-label">Best read as</span>
+          <strong>Concepts -> diagrams -> examples -> AI evolution</strong>
+        </div>
+      </aside>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
