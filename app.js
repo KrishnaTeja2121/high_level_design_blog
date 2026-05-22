@@ -1,20 +1,8 @@
 const markdownPath = "high-level-design-blog.md";
+const colorSchemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+let currentMarkdown = "";
 
-mermaid.initialize({
-  startOnLoad: false,
-  theme: "base",
-  securityLevel: "loose",
-  themeVariables: {
-    primaryColor: "#f5f5f7",
-    primaryTextColor: "#1d1d1f",
-    primaryBorderColor: "#d2d2d7",
-    lineColor: "#6e6e73",
-    secondaryColor: "#eaf3ff",
-    tertiaryColor: "#ffffff",
-    fontFamily:
-      '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif'
-  }
-});
+initializeMermaid();
 
 marked.use({
   renderer: {
@@ -36,6 +24,10 @@ marked.use({
 });
 
 loadGuide();
+colorSchemeQuery.addEventListener("change", () => {
+  initializeMermaid();
+  renderGuide(currentMarkdown);
+});
 
 async function loadGuide() {
   const content = document.querySelector("#content");
@@ -48,10 +40,8 @@ async function loadGuide() {
     }
 
     const markdown = await response.text();
-    content.innerHTML = marked.parse(markdown);
-    buildToc(content);
-    await mermaid.run({ querySelector: ".mermaid" });
-    observeSections();
+    currentMarkdown = markdown;
+    await renderGuide(markdown);
   } catch (error) {
     content.innerHTML = `
       <div class="loading">
@@ -60,6 +50,56 @@ async function loadGuide() {
     `;
     console.error(error);
   }
+}
+
+async function renderGuide(markdown) {
+  if (!markdown) return;
+
+  const content = document.querySelector("#content");
+  content.innerHTML = marked.parse(markdown);
+  buildToc(content);
+  await mermaid.run({ querySelector: ".mermaid" });
+  observeSections();
+}
+
+function initializeMermaid() {
+  mermaid.initialize({
+    startOnLoad: false,
+    theme: "base",
+    securityLevel: "loose",
+    themeVariables: getMermaidThemeVariables()
+  });
+}
+
+function getMermaidThemeVariables() {
+  const isDark = colorSchemeQuery.matches;
+
+  return {
+    primaryColor: isDark ? "#1d1d1f" : "#f5f5f7",
+    primaryTextColor: isDark ? "#f5f5f7" : "#1d1d1f",
+    primaryBorderColor: isDark ? "#6e6e73" : "#d2d2d7",
+    lineColor: isDark ? "#a1a1a6" : "#6e6e73",
+    secondaryColor: isDark ? "#0f2f4f" : "#eaf3ff",
+    tertiaryColor: isDark ? "#161617" : "#ffffff",
+    background: isDark ? "#161617" : "#ffffff",
+    mainBkg: isDark ? "#1d1d1f" : "#f5f5f7",
+    secondBkg: isDark ? "#0f2f4f" : "#eaf3ff",
+    tertiaryBkg: isDark ? "#161617" : "#ffffff",
+    textColor: isDark ? "#f5f5f7" : "#1d1d1f",
+    nodeTextColor: isDark ? "#f5f5f7" : "#1d1d1f",
+    titleColor: isDark ? "#f5f5f7" : "#1d1d1f",
+    edgeLabelBackground: isDark ? "#161617" : "#ffffff",
+    clusterBkg: isDark ? "#111418" : "#fbfbfd",
+    clusterBorder: isDark ? "#424245" : "#d2d2d7",
+    actorBkg: isDark ? "#1d1d1f" : "#f5f5f7",
+    actorBorder: isDark ? "#6e6e73" : "#d2d2d7",
+    actorTextColor: isDark ? "#f5f5f7" : "#1d1d1f",
+    activationBkgColor: isDark ? "#0f2f4f" : "#eaf3ff",
+    activationBorderColor: isDark ? "#2997ff" : "#0066cc",
+    sequenceNumberColor: isDark ? "#000000" : "#ffffff",
+    fontFamily:
+      '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif'
+  };
 }
 
 function buildToc(content) {
