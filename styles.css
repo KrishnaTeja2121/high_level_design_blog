@@ -369,10 +369,25 @@ a:hover {
   .mermaid svg .edgeLabel,
   .mermaid svg .cluster-label,
   .mermaid svg .messageText,
-  .mermaid svg .actor,
   .mermaid svg text {
     color: #f5f5f7 !important;
     fill: #f5f5f7 !important;
+  }
+
+  .mermaid svg rect.actor,
+  .mermaid svg .actor > rect {
+    fill: #1d1d1f !important;
+    stroke: #6e6e73 !important;
+  }
+
+  .mermaid svg text.actor,
+  .mermaid svg .actor tspan {
+    color: #f5f5f7 !important;
+    fill: #f5f5f7 !important;
+  }
+
+  .mermaid svg .actor-line {
+    stroke: #6e6e73 !important;
   }
 
   .mermaid svg foreignObject,
