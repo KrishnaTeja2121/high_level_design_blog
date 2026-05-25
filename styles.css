@@ -397,9 +397,17 @@ a:hover {
 
   .mermaid svg foreignObject,
   .mermaid svg foreignObject div,
+  .mermaid svg foreignObject span,
+  .mermaid svg foreignObject p,
   .mermaid svg .label div,
+  .mermaid svg .label span,
+  .mermaid svg .label p,
+  .mermaid svg .nodeLabel,
+  .mermaid svg .nodeLabel span,
+  .mermaid svg .nodeLabel p,
   .mermaid svg .nodeLabel div {
     color: #1d1d1f !important;
+    fill: #1d1d1f !important;
   }
 
   .mermaid svg .edgeLabel,
