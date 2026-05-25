@@ -351,6 +351,11 @@ a:hover {
 }
 
 @media (prefers-color-scheme: dark) {
+  .mermaid {
+    background: #f5f5f7;
+    border-color: #424245;
+  }
+
   .mermaid svg {
     background: transparent;
   }
@@ -360,8 +365,8 @@ a:hover {
   .mermaid svg .node ellipse,
   .mermaid svg .node polygon,
   .mermaid svg .node path {
-    fill: #1d1d1f !important;
-    stroke: #6e6e73 !important;
+    fill: #ffffff !important;
+    stroke: #d2d2d7 !important;
   }
 
   .mermaid svg .label,
@@ -370,20 +375,20 @@ a:hover {
   .mermaid svg .cluster-label,
   .mermaid svg .messageText,
   .mermaid svg text {
-    color: #f5f5f7 !important;
-    fill: #f5f5f7 !important;
+    color: #1d1d1f !important;
+    fill: #1d1d1f !important;
   }
 
   .mermaid svg rect.actor,
   .mermaid svg .actor > rect {
-    fill: #1d1d1f !important;
-    stroke: #6e6e73 !important;
+    fill: #ffffff !important;
+    stroke: #d2d2d7 !important;
   }
 
   .mermaid svg text.actor,
   .mermaid svg .actor tspan {
-    color: #f5f5f7 !important;
-    fill: #f5f5f7 !important;
+    color: #1d1d1f !important;
+    fill: #1d1d1f !important;
   }
 
   .mermaid svg .actor-line {
@@ -394,14 +399,14 @@ a:hover {
   .mermaid svg foreignObject div,
   .mermaid svg .label div,
   .mermaid svg .nodeLabel div {
-    color: #f5f5f7 !important;
+    color: #1d1d1f !important;
   }
 
   .mermaid svg .edgeLabel,
   .mermaid svg .edgeLabel rect,
   .mermaid svg .labelBkg {
-    background-color: #161617 !important;
-    fill: #161617 !important;
+    background-color: #ffffff !important;
+    fill: #ffffff !important;
   }
 
   .mermaid svg .flowchart-link,

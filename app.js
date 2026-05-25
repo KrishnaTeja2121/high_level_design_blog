@@ -72,31 +72,29 @@ function initializeMermaid() {
 }
 
 function getMermaidThemeVariables() {
-  const isDark = colorSchemeQuery.matches;
-
   return {
-    primaryColor: isDark ? "#1d1d1f" : "#f5f5f7",
-    primaryTextColor: isDark ? "#f5f5f7" : "#1d1d1f",
-    primaryBorderColor: isDark ? "#6e6e73" : "#d2d2d7",
-    lineColor: isDark ? "#a1a1a6" : "#6e6e73",
-    secondaryColor: isDark ? "#0f2f4f" : "#eaf3ff",
-    tertiaryColor: isDark ? "#161617" : "#ffffff",
-    background: isDark ? "#161617" : "#ffffff",
-    mainBkg: isDark ? "#1d1d1f" : "#f5f5f7",
-    secondBkg: isDark ? "#0f2f4f" : "#eaf3ff",
-    tertiaryBkg: isDark ? "#161617" : "#ffffff",
-    textColor: isDark ? "#f5f5f7" : "#1d1d1f",
-    nodeTextColor: isDark ? "#f5f5f7" : "#1d1d1f",
-    titleColor: isDark ? "#f5f5f7" : "#1d1d1f",
-    edgeLabelBackground: isDark ? "#161617" : "#ffffff",
-    clusterBkg: isDark ? "#111418" : "#fbfbfd",
-    clusterBorder: isDark ? "#424245" : "#d2d2d7",
-    actorBkg: isDark ? "#1d1d1f" : "#f5f5f7",
-    actorBorder: isDark ? "#6e6e73" : "#d2d2d7",
-    actorTextColor: isDark ? "#f5f5f7" : "#1d1d1f",
-    activationBkgColor: isDark ? "#0f2f4f" : "#eaf3ff",
-    activationBorderColor: isDark ? "#2997ff" : "#0066cc",
-    sequenceNumberColor: isDark ? "#000000" : "#ffffff",
+    primaryColor: "#f5f5f7",
+    primaryTextColor: "#1d1d1f",
+    primaryBorderColor: "#d2d2d7",
+    lineColor: "#6e6e73",
+    secondaryColor: "#eaf3ff",
+    tertiaryColor: "#ffffff",
+    background: "#ffffff",
+    mainBkg: "#f5f5f7",
+    secondBkg: "#eaf3ff",
+    tertiaryBkg: "#ffffff",
+    textColor: "#1d1d1f",
+    nodeTextColor: "#1d1d1f",
+    titleColor: "#1d1d1f",
+    edgeLabelBackground: "#ffffff",
+    clusterBkg: "#fbfbfd",
+    clusterBorder: "#d2d2d7",
+    actorBkg: "#f5f5f7",
+    actorBorder: "#d2d2d7",
+    actorTextColor: "#1d1d1f",
+    activationBkgColor: "#eaf3ff",
+    activationBorderColor: "#0066cc",
+    sequenceNumberColor: "#ffffff",
     fontFamily:
       '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif'
   };
